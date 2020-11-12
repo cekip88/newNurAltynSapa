@@ -1,0 +1,222 @@
+$unit: 'px'
+
+body
+	font-size: 18px
+
+.section
+	+w($tablet#{$unit})
+
+.btn
+	opacity: .9
+
+
+.head
+	&-logo
+		svg
+			&:last-child
+				width: 110px
+	&-burger
+		&-btn
+			display: none
+		&-menu
+			height: 44px
+			padding: 0
+			position: relative
+			background-color: transparent
+			display: flex
+			align-items: center
+			overflow: visible
+			transform: translateX(0)
+	&-nav
+		flex-direction: row
+	&-link,&-phone,&-whatsapp
+		height: auto
+		border: none
+		padding-left: 0
+	&-contact
+		align-items: center
+		order: 2
+		margin-left: 10px
+	&-link
+		font-size: 14px
+		margin-left: 10px
+		position: relative
+		transition: .35s ease
+		&:after
+			+af
+			+wh(100%,1px)
+			position: absolute
+			bottom: -30px
+			transition: .35s ease
+		&:hover,&.active
+			color: $green
+			&:after
+				background-color: $yellow
+	&-phone
+		color: $green
+	&-whatsapp
+		font-size: 12px
+
+
+.block
+	&-subtitle
+		left: 0
+
+
+.btn
+	+wh(220px,60px)
+
+.slide
+	.section
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&-title
+		font-size: 96px
+		margin-left: -7px
+		margin-bottom: 7px
+	&-subtitle
+		display: inline-block
+		padding: 0 5px 5px
+		background-color: rgba($t_gray,.9)
+	&-right
+		flex: 0 0 200px
+		flex-wrap: wrap
+		display: flex
+		justify-content: space-between
+		li
+			flex: 0 0 200px
+			display: flex
+			margin-bottom: 30px
+			font-size: 14px
+			svg
+				flex: 0 0 12px
+				margin-right: 10px
+	&-btn
+		margin: 20px 0
+	&-watermark
+		font-size: 14px
+
+
+.projects
+	padding-bottom: 50px
+	&-container
+		display: flex
+		align-items: center
+	&-descriptions
+		flex: 0 0 214px
+		height: 140px
+		margin-right: 50px
+	&-slider
+		+wh(100%,530px)
+		margin-top: 0
+	&-control
+		width: 315px
+		background-color: transparent
+		bottom: 80px
+
+.project
+	width: 315px
+	transform: translateX(690px)
+	opacity: .5
+	transition: .2s ease
+	&:first-child
+		transform: translateX(-345px)
+	&:nth-child(3)
+		transform: translateX(345px)
+	&.active
+		opacity: 1
+	&-descprition
+		&-paragraph
+			margin-top: 23px
+	&-slide
+		&-title
+			&:after
+				width: 108px
+				height: 3px
+				bottom: -20px
+		&-photo
+			height: calc(100% - 80px)
+
+
+.calc
+	&-page
+		display: flex
+		flex-wrap: wrap
+		padding-bottom: 100px
+		&>.calc-inpt,.calc-inpt:last-child
+			margin-bottom: 0
+		&>.calc-inpt
+			margin-top: 20px
+		&-first
+			.calc-inpt
+				display: flex
+				align-items: center
+				flex-grow: 0
+				flex-shrink: 0
+				flex-basis: calc(100% - 340px)
+				margin: 0
+				span
+					margin-bottom: 0
+	&-select
+		&-buttons
+			height: auto
+			margin: 0 auto
+			button
+				+w(150px)
+				margin: 35px 0
+	&-desc
+		flex: 0 0 320px
+		padding: 25px 40px
+		margin: 0 auto 0 0
+		font-size: 20px
+		line-height: 1.4
+	&-continue
+		position: absolute
+		bottom: 20px
+		right: 0
+	&-col
+		flex-grow: 0
+		flex-shrink: 0
+		flex-basis: calc(50% - 10px)
+		&:nth-child(2n)
+			margin-left: auto
+	&-inpt
+		flex: 0 0 100%
+		&>textarea
+			height: 80px
+			font-size: 18px
+
+
+.about
+	&-desc
+		width: 70%
+		margin: 0 auto
+
+
+.worker
+	width: 33%
+
+
+.partners
+	&-unit
+		flex-basis: 25%
+
+
+.foot
+	padding-bottom: 30px
+	&-logo
+		margin-bottom: 60px
+	&-block
+		flex-basis: 50%
+		margin: 10px 0
+		&:last-child
+			display: flex
+			align-items: center
+			justify-content: space-between
+			flex-basis: 100%
+			font-size: 14px
+			padding-top: 10px
+	&-signature
+		font-family: $f_light
+		padding: 0

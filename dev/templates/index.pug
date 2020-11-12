@@ -1,0 +1,271 @@
+extends template/main
+append vars
+	-
+		page_title = 'Главная'
+block content
+	main
+		section.slider.posr#slider
+			.slider-cont.posr
+				.slide.slide-1
+					.slide-bgc
+						+img('main-bgc-1.jpg')
+					.section.posr
+						.slide-left
+							h2.slide-title Ремонт
+							span.slide-subtitle квартир под ключ по европейским стандартам
+							button.slide-btn.btn Заказать проект
+						ul.slide-right
+							li
+								include ../img/plus.svg
+								span Работаем по Казахстану с 1992 года
+							li
+								include ../img/plus.svg
+								span Сертифицированные специалисты
+							li
+								include ../img/plus.svg
+								span Гарантия на работу 10 лет
+						span.slide-watermark NurAltynSapa.kz
+				.slide.slide-2
+					.slide-bgc
+						+img('main-bgc-2.jpg')
+					.section.posr
+						.slide-left
+							h2.slide-title Евроремонт
+							span.slide-subtitle квартир под ключ по европейским стандартам
+							button.slide-btn.btn Заказать проект
+						ul.slide-right
+							li
+								include ../img/plus.svg
+								span Работаем по Казахстану с 1992 года
+							li
+								include ../img/plus.svg
+								span Сертифицированные специалисты
+							li
+								include ../img/plus.svg
+								span Гарантия на работу 10 лет
+						span.slide-watermark NurAltynSapa.kz
+				.slide.slide-3
+					.slide-bgc
+						+img('main-bgc-3.jpg')
+					.section.posr
+						.slide-left
+							h2.slide-title Кухни
+							span.slide-subtitle квартир под ключ по европейским стандартам
+							button.slide-btn.btn Заказать проект
+						ul.slide-right
+							li
+								include ../img/plus.svg
+								span Работаем по Казахстану с 1992 года
+							li
+								include ../img/plus.svg
+								span Сертифицированные специалисты
+							li
+								include ../img/plus.svg
+								span Гарантия на работу 10 лет
+						span.slide-watermark NurAltynSapa.kz
+			.control.slider-control
+		section.block.projects#projects
+			.section.posr
+				h2.block-title.projects-title Наши актуальные проекты
+				span.block-subtitle.projects-subtitle Наши проекты
+				.projects-container
+					ul.projects-descriptions
+						li.project-descprition
+							h5.project-descprition-title Ремонт "Эконом"
+							p.project-descprition-paragraph
+								span Краткое описание:
+								span Идейные соображения высшего порядка.
+						li.project-descprition
+							h5.project-descprition-title Загородный дом "Гнездо"
+							p.project-descprition-paragraph
+								span Слайд 2:
+								span Идейные соображения высшего порядка.
+						li.project-descprition
+							h5.project-descprition-title Ремонт "Стандарт"
+							p.project-descprition-paragraph
+								span Слайд 3:
+								span Идейные соображения высшего порядка.
+					.projects-slider
+						ul.projects-cont
+							li.project
+								.project-slide-photo
+									+img('slide-1.jpg')
+								h6.project-slide-title Ремонт "Эконом"
+							li.project
+								.project-slide-photo
+									+img('slide-2.jpg')
+								h6.project-slide-title Загородный дом "Гнездо"
+							li.project
+								.project-slide-photo
+									+img('slide-3.jpg')
+								h6.project-slide-title Ремонт "Стандарт"
+						.projects-control.control
+						.projects-arrows
+							button.projects-arrows-prev
+								include ../img/arrow-left.svg
+							button.projects-arrows-next
+								include ../img/arrow-right.svg
+		section.block.calc#calc
+			.section.posr
+				h2.block-title.calc-title Форма расчета
+				span.block-subtitle.calc-subtitle Форма расчета
+				form.calc-form
+					.calc-page.calc-page-first
+						p.calc-desc Чтобы рассчитать стоимость ремонта — выберите интересующие вас пункты, а в конце нажмите кнопку "Рассчитать стоимость", и получите готовый, но приблизительный расчет и подготовленного специалиста для выезда.
+						.calc-inpt
+							span Тип ремонта
+							.calc-select-buttons
+								input(type='hidden' value='standard')
+								button(data-value='economy' type='button')
+									include ../img/calc-arrow.svg
+									span Эконом
+								button(data-value='standard' type='button').active
+									include ../img/calc-arrow.svg
+									span Стандарт
+								button(data-value='premium' type='button')
+									include ../img/calc-arrow.svg
+									span Премиум
+						a(href='#calc').calc-continue.btn Далее
+					.calc-page
+						.calc-col
+							.calc-inpt
+								span Укажите площадь
+								input(placeholder='Площадь ремонта М2').square
+							.calc-inpt
+								span Высота потолков
+								input(placeholder='М').height
+							.calc-inpt
+								span Вид помещения
+								input(placeholder='Новостройка или офис')
+						.calc-col
+							.calc-inpt
+								span Демонтаж
+								input(placeholder='100%').demo
+							.calc-inpt
+								span Стены
+								input(placeholder='Обои под покраску')
+							.calc-inpt
+								span Полы
+								input(placeholder='Ламинат')
+						.calc-inpt
+							span Краткое описание
+							textarea(placeholder='Хочу не дорого, но богато')
+						a(href='#calc').calc-continue.btn Далее
+					.calc-page
+						.calc-col
+							.calc-inpt
+								span Ф.И.О.
+								input
+							.calc-inpt
+								span Адрес
+								input
+						.calc-col
+							.calc-inpt
+								span Контактный номер
+								input
+							.calc-inpt
+								span E-mail
+								input
+						button.calc-continue.btn.calc-submit Отправить
+		section.block.about#about
+			.section.posr
+				h2.block-title.about-title О компании
+				span.block-subtitle.about-subtitle О компании
+				.about-desc
+					.about-cont
+						.about-page.active
+							p Название «#[strong Нур Алтын Сапа]», подчеркивает наш многолетний опыт и компетентность в строительстве и ремонте.
+							p Наша компания имеет все необходимые документы и допуск СРО — свидетельство о допуске к строительным или проектировочным работам, которое выдается в соответствии с действующими нормами и стандартами СРО (саморегулируемой организации).
+							p Специалистов компании ценят как экспертов в строительстве домов и часто приглашают выступать на семинарах и конференциях, берут интервью.
+						.about-page
+							p Наша компания имеет все необходимые документы и допуск СРО — свидетельство о допуске к строительным или проектировочным работам, которое выдается в соответствии с действующими нормами и стандартами СРО (саморегулируемой организации).
+							p Название «Нур Алтын Сапа», подчеркивает наш многолетний опыт и компетентность в строительстве и ремонте.
+							p Специалистов компании ценят как экспертов в строительстве домов и часто приглашают выступать на семинарах и конференциях, берут интервью.
+						.about-page
+							p Название «Нур Алтын Сапа», подчеркивает наш многолетний опыт и компетентность в строительстве и ремонте.
+							p Специалистов компании ценят как экспертов в строительстве домов и часто приглашают выступать на семинарах и конференциях, берут интервью.
+							p Наша компания имеет все необходимые документы и допуск СРО — свидетельство о допуске к строительным или проектировочным работам, которое выдается в соответствии с действующими нормами и стандартами СРО (саморегулируемой организации).
+					.control.about-control
+						button.control-btn.active
+						button.control-btn
+						button.control-btn
+				.about-name
+					include ../img/about-name.svg
+		section.spec.block#spec
+			.section.posr
+				h2.block-title.spec-title Специалисты
+				span.block-subtitle.spec-subtitle Специалисты
+				p.spec-desc Строительно-ремонтная компания #[strong “НУР АЛТЫН САПА”] является одним из признанных лидеров на строительном рынке центрального Казахстана. На сегодняшний день компания предлагает широкий спектр услуг, связанных со строительством загородных домов и ремонтной деятельностью. Специалисты компании осуществляют:
+				ul.spec-list
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Один
+						span.worker-position Руководитель
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Два
+						span.worker-position Заместитель
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Три
+						span.worker-position Плиточник, 20 лет стажа
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Четыре
+						span.worker-position Золотых дел мастер
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Пять
+						span.worker-position Плотник
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Шесть
+						span.worker-position Штукатур
+						p.worker-desc Идейные соображения высшего порядка.
+		section.block.partners#partners
+			.section.posr
+				h2.block-title.partners-title Партнёры
+				span.block-subtitle.partners-subtitle Партнёры
+				ul.partners-list
+					li.partners-unit
+						+img('keramaMarazzi.png')
+					li.partners-unit
+						+img('Makita.png')
+					li.partners-unit
+						+img('grundfos.png')
+					li.partners-unit
+						+img('Knauf.png')
+					li.partners-unit
+						+img('12m.png')
+					li.partners-unit
+						+img('stroyMart.png')
+					li.partners-unit
+						+img('220volt.png')
+					li.partners-unit
+						+img('pufas.png')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

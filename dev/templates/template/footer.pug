@@ -1,0 +1,68 @@
+footer.block.foot#foot
+	.section.posr
+		h2.block-title.foot-title Контакты
+		span.block-subtitle.foot-subtitle Контакты
+		.foot-cont
+			.foot-block.foot-address
+				a(href='#slider').foot-logo
+					include ../../img/logo-img.svg
+					include ../../img/logo-text.svg
+				a(href='https://2gis.kz/karaganda/geo/70030076168481761?m=73.113017%2C49.815572%2F16.11').foot-address-link
+					include ../../img/address.svg
+					span г. Караганда, ул.Мустафина 7/2
+				a(href='tel:87712482207').foot-address-link
+					include ../../img/phone.svg
+					span #[strong Телефон:] +7 (771) 248 22 07
+			form.foot-form.foot-block(data-submit-action='front:createOrder')
+				input(type='hidden' name='form_order' value='Заказать звонок')
+				h5.foot-form-title Обратная связь
+				.foot-form-inpt
+					span Ф.И.О. или Организация
+					input(name='name' required).foot-form-name
+				.foot-form-inpt
+					span Контактный телефон
+					input(name='phone' required).foot-form-phone.phone
+				label.foot-form-label
+					input(type='checkbox' name="confirm").foot-form-checkbox
+					.foot-form-immitation
+					span Даю согласие на сбор и обработку персональных данных.
+				button(disabled name='submit').btn.foot-form-button Отправить
+			.foot-block.foot-rek
+				.foot-rek-unit
+					strong ИИК:&nbsp;
+					span KZ1826MOKZTD2999234
+				.foot-rek-unit
+					strong БИК:&nbsp;
+					span ALMNKZKA
+			.foot-block.foot-rek
+				.foot-rek-unit
+					span ТОО&nbsp;
+					strong "Нур Алтын Сапа"
+				.foot-rek-unit
+					strong БИН:&nbsp;
+					span 190440007008
+			.foot-block
+				.foot-signature
+					|NURALTYNSAPA.KZ ТОО "
+					strong Нур Алтын Сапа
+					|" 1992 - 2020
+				.foot-soc
+					a(href='#')
+						include ../../img/vk.svg
+					a(href='#')
+						include ../../img/insta.svg
+					a(href='#')
+						include ../../img/facebook.svg
+					a(href='#')
+						include ../../img/youtube.svg
+				.foot-signature
+					|Website Development:&nbsp;
+					a(href='https://grammla.kz')
+						strong Grammla
+
+
+
+
+
+	+inc('js','imask.js')
+	+inc('js','front.js',true)(type='module')

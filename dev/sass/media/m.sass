@@ -1,0 +1,535 @@
+$unit: 'px'
+html
+	scroll-behavior: smooth
+
+button[disabled]
+	background-color: rgba(gray,.5)!important
+
+button,label,a
+	&:hover
+		cursor: pointer
+.section
+	+w($mobile#{$unit})
+	margin: auto
+	padding: 0 10px
+
+.head
+	+w(100%)
+	padding-top: 18px
+	padding-bottom: 18px
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 100000
+	transition: .35s ease
+	&.active
+		background-color: rgba($bgc_gray,.8)
+	&-row
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&-logo,&-burger-btn
+		position: relative
+		z-index: 100
+	&-logo
+		display: flex
+		align-items: center
+		svg
+			height: auto
+		svg:first-child
+			+w(32px)
+			margin-right: 13.5px
+		svg:last-child
+			+w(156px)
+	&-burger
+		&-btn
+			+wh(30px)
+			flex: 0 0 30px
+			display: block
+			position: relative
+			&:after,&:before,span
+				+af
+				background-color: $green
+				height: 2px
+				border-radius: 1px
+				position: absolute
+				transition: .35s ease
+			&:before
+				+w(14px)
+				top: 8px
+				left: 11px
+			span
+				+w(20px)
+				top: 14px
+				left: 5px
+			&:after
+				+w(10px)
+				top: 20px
+				left: 15px
+			&.active
+				&:before,&:after
+					left: 5px
+		&-menu
+			height: 100vh
+			overflow: auto
+			padding-top: 81px
+			background-color: rgba($bgc_gray,0.95)
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			z-index: 99
+			transition: .35s ease
+			transform: translateX(100%)
+			&.active
+				transform: translateX(0)
+	&-contact,&-nav
+		display: flex
+		align-items: stretch
+		justify-content: flex-start
+		flex-direction: column
+	&-phone,&-whatsapp,&-link
+		height: calc((100vh - 81px) / 7)
+		padding-left: 30px
+		display: flex
+		align-items: center
+		color: $white
+		border-top: 1px solid $white
+
+
+.slider
+	&-cont
+		+wh(100%,100vh)
+		background-color: $black
+	&-control
+		position: absolute
+		bottom: 20px
+		right: 0
+		left: 0
+
+.slide
+	+wh(100%)
+	+dfc
+	color: $white
+	position: absolute
+	overflow: hidden
+	opacity: 0
+	visibility: hidden
+	transition: .5s ease
+	&.active
+		opacity: 1
+		visibility: visible
+	&-bgc
+		+wh(100%,110vh)
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		opacity: .9
+		img
+			+wh(100%)
+			object-fit: cover
+			object-position: right
+	&-title
+		font-family: $f_medium
+		font-size: 50px
+	&-btn
+		margin: 50px 0
+	&-right
+		li
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+	&-watermark
+		position: absolute
+		bottom: -50px
+		left: 20px
+
+
+.block
+	padding-top: 35px
+	background-position: center
+	background-repeat: no-repeat
+	background-size: auto 150%
+	&-title
+		font-family: $f_bold
+		font-size: 12px
+		position: relative
+		z-index: 10
+		padding-bottom: 50px
+	&-subtitle
+		font-family: $f_bold
+		color: rgba($bgc_gray,.05)
+		font-size: 43px
+		position: absolute
+		top: -20px
+		left: -10px
+		white-space: pre
+
+
+.control
+	display: flex
+	justify-content: center
+	&-btn
+		margin: 0 10px
+		padding: 2px
+		border: 1px solid transparent
+		border-radius: 100%
+		&:before
+			+af
+			+wh(8px)
+			display: block
+			background-color: $white
+			border-radius: 100%
+		&.active
+			border-color: $yellow
+
+
+.btn
+	+wh(200px,50px)
+	+dfc
+	font-family: $f_bold
+	font-size: 12px
+	text-transform: uppercase
+	color: $white
+	background-color: $green
+	border-radius: 30px
+
+
+.posr
+	position: relative
+
+.projects
+	color: $white
+	background-color: rgba($bgc_gray,.96)
+	&-subtitle
+		color: rgba($bgc_gray,.5)
+	&-descriptions
+		position: relative
+		height: 80px
+	&-slider
+		height: 480px
+		margin-top: 30px
+		display: flex
+		align-items: center
+		position: relative
+	&-cont
+		height: 100%
+		width: 100%
+		position: absolute
+		overflow: hidden
+	&-arrows
+		+w(100%)
+		display: flex
+		justify-content: space-between
+		position: relative
+		z-index: 50
+	&-control
+		padding: 10px 0
+		background-color: rgba($bgc_gray,.5)
+		position: absolute
+		bottom: 50px
+		left: 0
+		right: 0
+
+
+.project
+	height: 100%
+	transition: .1s ease
+	position: absolute
+	overflow: hidden
+	transform: translateX(100%)
+	&:first-child
+		transform: translateX(-100%)
+	&:nth-child(2)
+		transform: translateX(0)
+	&-descprition
+		position: absolute
+		top: 0
+		opacity: 0
+		transition: .35s ease
+		&.active
+			opacity: 1
+			position: relative
+		&-title
+			font-family: $f_bold
+			font-size: 18px
+			text-transform: uppercase
+		&-paragraph
+			margin-top: 10px
+			font-family: $ibm
+			span
+				display: block
+	&-slide
+		&-title
+			position: absolute
+			bottom: 20px
+			&:after
+				+af
+				+wh(70px,2px)
+				background-color: $yellow
+				position: absolute
+				bottom: -10px
+		&-photo
+			height: calc(100% - 50px)
+			img
+				height: 100%
+				object-fit: cover
+
+
+.calc
+	background-image: url(../img/second-screen.jpg)
+	&-form
+		+w(100%)
+		position: relative
+		padding-bottom: 20px
+	&-page
+		width: 100%
+		opacity: 0
+		visibility: hidden
+		position: absolute
+		transition: .35s ease
+	&-desc
+		padding: 10px 20px
+		border-radius: 8px
+		background-color: $white
+		font-family: $ibm
+		line-height: 20px
+		margin-bottom: 20px
+	&-inpt
+		padding: 20px 10px
+		border-radius: 8px
+		background-color: $white
+		margin-bottom: 20px
+		&>span
+			text-transform: uppercase
+			font-family: $f_bold
+			color: $green
+			font-size: 12px
+			display: block
+			margin-bottom: 10px
+		&>input,&>textarea
+			+w(100%)
+			padding: 7px 10px
+			border: 1px solid rgba($bgc_gray,.4)
+			border-radius: 5px
+	&-select
+		&-buttons
+			height: 150px
+			display: flex
+			align-items: flex-start
+			justify-content: center
+			flex-direction: column
+			overflow: hidden
+			button
+				text-transform: uppercase
+				margin: 15px 0
+				svg
+					transform: scale(.8)
+				&.active
+					font-family: $f_bold
+					svg
+						transform: scale(1)
+	&-continue
+		margin-left: auto
+
+
+.about
+	background-image: url(../img/third-screen.jpg)
+	background-position: left center
+	padding-bottom: 50px
+	&-title
+		color: $white
+	&-subtitle
+		color: rgba($bgc_gray,.3)
+	&-desc
+		+wh(100%,340px)
+		background-color: $white
+		border-radius: 8px
+		font-family: $ibm
+		strong
+			font-weight: 700
+	&-cont
+		width: 100%
+		height: 100%
+		position: relative
+		overflow: hidden
+	&-page
+		width: 100%
+		padding: 20px 15px
+		transition: .35s ease
+		position: absolute
+		p
+			margin-bottom: 10px
+			color: $black
+			&:last-child
+				margin-bottom: 0
+	&-control
+		position: absolute
+		bottom: -30px
+		left: 0
+		right: 0
+	&-name
+		display: none
+
+
+.spec
+	background-image: url(../img/forth-screen.jpg)
+	padding-bottom: 50px
+	&-desc
+		line-height: 18px
+		text-align: center
+		font-family: $ibm
+		strong
+			font-weight: 900
+	&-list
+		+wh(100%,320px)
+		padding-top: 80px
+		overflow: hidden
+		position: relative
+
+
+.worker
+	width: 100%
+	display: flex
+	flex-direction: column
+	align-items: center
+	font-size: 12px
+	font-family: $f_medium
+	position: absolute
+	transition: .35s ease
+	&-photo
+		+wh(120px)
+		border-radius: 100%
+		margin-bottom: 24px
+		overflow: hidden
+		img
+			+wh(100%)
+			object-fit: cover
+			object-position: center
+	&-position
+		text-transform: uppercase
+		color: $green
+		margin-top: 12px
+		margin-bottom: 20px
+	&-desc
+		max-width: 151px
+		text-align: center
+		font-family: $ibm
+		font-weight: 600
+
+
+.partners
+	background-color: #E5E5E5
+	padding-bottom: 50px
+	&-list
+		background-color: $white
+		border: 6px solid $yellow
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between
+	&-unit
+		+dfc
+		flex: 0 0 50%
+
+
+.foot
+	background-color: $bgc_gray
+	color: $white
+	padding-bottom: 50px
+	&-subtitle
+		color: rgba(#47494A,.2)
+	&-cont
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+	&-block
+		flex: 0 0 100%
+	&-address
+		display: flex
+		flex-direction: column
+		padding-bottom: 10px
+		&-link
+			display: flex
+			align-items: center
+			color: $white
+			text-decoration: underline
+			margin-top: 15px
+			svg
+				width: 23px
+				margin-right: 20px
+	&-logo
+		display: flex
+		flex-direction: column
+		align-items: center
+		svg
+			&:first-child
+				margin-bottom: 15px
+	&-form
+		padding: 20px 15px
+		margin: 20px 0
+		border-radius: 8px
+		background-color: $white
+		color: $t_gray
+		font-family: $f_medium
+		font-size: 13px
+		&-title
+			text-transform: uppercase
+			text-align: center
+			margin-bottom: 20px
+		&-inpt
+			display: flex
+			flex-direction: column
+			margin-bottom: 10px
+			span
+				padding-bottom: 10px
+			input
+				+w(100%)
+				border: 1px solid rgba($bgc_gray,.3)
+				border-radius: 4px
+				padding: 5px 10px
+		&-immitation
+			+wh(16px)
+			flex: 0 0 16px
+			border-radius: 4px
+			border: 1px solid #ADB5BD
+			padding: 2px
+			margin-right: 10px
+			&:after
+				+af
+				+wh(100%)
+				background-color: $green
+				border-radius: 2px
+				transition: .35s ease
+				opacity: 0
+				visibility: hidden
+		&-label
+			display: flex
+			align-items: center
+		&-checkbox
+			display: none
+			&:checked+.foot-form-immitation:after
+				opacity: 1
+				visibility: visible
+		&-button
+			margin: 20px auto 0
+	&-rek
+		padding-top: 10px
+		&-unit
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+	&-signature
+		padding: 10px 0
+		a
+			color: $white
+	strong
+		font-family: $f_bold
+	&-soc
+		a
+			margin-right: 10px
+			&:last-child
+				margin-right: 0
