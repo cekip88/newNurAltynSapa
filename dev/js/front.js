@@ -431,7 +431,7 @@ class Page {
 		const _ = this;
 
 		let form = document.querySelector('.foot-form'),
-				btn = form.elements['submit'],
+				btn = form.elements['form_order'],
 				name = form.elements['name'],
 				phone = form.elements['phone'],
 				confirm = form.elements['confirm'];

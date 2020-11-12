@@ -116,7 +116,10 @@ export class _front{
 		//
 		let response = await crm.createOrder(formData);
 		if(response['status'] === 'success'){
-			return MainEventBus.trigger(_.componentName,'createOrderSuccess',response['data']);
+			return MainEventBus.trigger(_.componentName,'createOrderSuccess',{
+				data: response['data'],
+				formFields : formData
+			});
 		}
 		return MainEventBus.trigger(_.componentName,'createOrderFail',response);
 	}

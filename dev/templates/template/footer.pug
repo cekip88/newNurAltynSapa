@@ -14,7 +14,6 @@ footer.block.foot#foot
 					include ../../img/phone.svg
 					span #[strong Телефон:] +7 (771) 248 22 07
 			form.foot-form.foot-block(data-submit-action='front:createOrder')
-				input(type='hidden' name='form_order' value='Заказать звонок')
 				h5.foot-form-title Обратная связь
 				.foot-form-inpt
 					span Ф.И.О. или Организация
@@ -26,7 +25,7 @@ footer.block.foot#foot
 					input(type='checkbox' name="confirm").foot-form-checkbox
 					.foot-form-immitation
 					span Даю согласие на сбор и обработку персональных данных.
-				button(disabled name='submit').btn.foot-form-button Отправить
+				button(disabled name='form_order' value='Заказать звонок').btn.foot-form-button Отправить
 			.foot-block.foot-rek
 				.foot-rek-unit
 					strong ИИК:&nbsp;

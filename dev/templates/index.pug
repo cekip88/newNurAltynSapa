@@ -109,13 +109,13 @@ block content
 			.section.posr
 				h2.block-title.calc-title Форма расчета
 				span.block-subtitle.calc-subtitle Форма расчета
-				form.calc-form
+				form(data-submit-action='front:createOrder').calc-form
 					.calc-page.calc-page-first
 						p.calc-desc Чтобы рассчитать стоимость ремонта — выберите интересующие вас пункты, а в конце нажмите кнопку "Рассчитать стоимость", и получите готовый, но приблизительный расчет и подготовленного специалиста для выезда.
 						.calc-inpt
 							span Тип ремонта
 							.calc-select-buttons
-								input(type='hidden' value='standard')
+								input(type='hidden' value='standard' name='type')
 								button(data-value='economy' type='button')
 									include ../img/calc-arrow.svg
 									span Эконом
@@ -130,43 +130,43 @@ block content
 						.calc-col
 							.calc-inpt
 								span Укажите площадь
-								input(placeholder='Площадь ремонта М2').square
+								input(placeholder='Площадь ремонта М2' name='area').square
 							.calc-inpt
 								span Высота потолков
-								input(placeholder='М').height
+								input(placeholder='М' name='ceil').height
 							.calc-inpt
 								span Вид помещения
-								input(placeholder='Новостройка или офис')
+								input(placeholder='Новостройка или офис' name='place')
 						.calc-col
 							.calc-inpt
 								span Демонтаж
-								input(placeholder='100%').demo
+								input(placeholder='100%' name='demontage').demo
 							.calc-inpt
 								span Стены
-								input(placeholder='Обои под покраску')
+								input(placeholder='Обои под покраску' name='wall')
 							.calc-inpt
 								span Полы
-								input(placeholder='Ламинат')
+								input(placeholder='Ламинат' name='floor')
 						.calc-inpt
 							span Краткое описание
-							textarea(placeholder='Хочу не дорого, но богато')
+							textarea(placeholder='Хочу не дорого, но богато' name='desc')
 						a(href='#calc').calc-continue.btn Далее
 					.calc-page
 						.calc-col
 							.calc-inpt
 								span Ф.И.О.
-								input
+								input(name='name' type='text' required)
 							.calc-inpt
 								span Адрес
-								input
+								input(type='text' name='addr')
 						.calc-col
 							.calc-inpt
 								span Контактный номер
-								input
+								input(type='text' name='phone' required).phone
 							.calc-inpt
 								span E-mail
-								input
-						button.calc-continue.btn.calc-submit Отправить
+								input(type='email' name='email')
+						button(name='form_order' value='Форма расчета').btn.calc-submit Отправить
 		section.block.about#about
 			.section.posr
 				h2.block-title.about-title О компании
