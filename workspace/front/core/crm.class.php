@@ -47,6 +47,7 @@ class CRM{
         return [
             'status'=>'fail',
             'failText'=>'Order creating error',
+            'errorText'=> $this->db->errtext,
             'data'=>['orderId'=>$orderId]
         ];
 	}
