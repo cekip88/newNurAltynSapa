@@ -6,12 +6,18 @@ class Front extends _front{
 		const _ = this;
 		MainEventBus.add(_.componentName,'createOrderSuccess',_.createOrderSuccess.bind(_));
 		MainEventBus.add(_.componentName,'createOrderFail',_.createOrderFail.bind(_));
+		MainEventBus.add(_.componentName,'clearForm',_.clearForm.bind(_));
 	}
 	createOrderSuccess(orderData){
+		
 		console.log(orderData);
 	}
 	createOrderFail(orderData){
 		console.log('fail',orderData)
+	}
+	clearForm(form){
+		const _ = this;
+		form.reset();
 	}
 }
 new Front();
